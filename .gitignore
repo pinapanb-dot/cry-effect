@@ -1,0 +1,13 @@
+.venv/
+.cache/
+__pycache__/
+.pytest_cache/
+*_cry.wav
+
+# build
+build/
+dist/
+packaging/version_info.txt
+
+# Claude Code の設定(開発用)
+.claude/

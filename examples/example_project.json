@@ -1,0 +1,14 @@
+{
+  "source": "vocal.wav",
+  "global_cry_amount": 60,
+  "regions": [
+    {"type": "tremor", "start": 12.34, "end": 14.10, "strength": 70,
+     "params": {"depth_cents": 30, "rate_hz": 5, "irregularity": 0.6}},
+    {"type": "breathiness", "start": 20.00, "end": 23.50, "strength": 60,
+     "params": {"amount": 0.3}},
+    {"type": "sob_formant", "start": 30.00, "end": 45.50, "strength": 50,
+     "params": {"warp": 0.94}},
+    {"type": "phrase_end", "start": 44.20, "end": 45.50, "strength": 80,
+     "params": {"onset": 0.4, "breath": 0.7, "level_drop_db": 15, "f0_drop_cents": -50, "rasp": 0.2}}
+  ]
+}

@@ -1,0 +1,4 @@
+# 配布版(packaging/build.py)を作るときだけ必要
+-r requirements.txt
+pyinstaller>=6.16
+pillow

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cry Effect</title>
+<link rel="icon" href="/favicon.ico">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="bar top">
+  <div class="group">
+    <button id="btn-open" data-i18n="open" data-i18n-title="open.title">開く…</button>
+    <input id="path-input" type="text" data-i18n-placeholder="path.placeholder" spellcheck="false">
+    <button id="btn-save" data-i18n="save" data-i18n-title="save.title" disabled>保存</button>
+    <button id="btn-save-as" data-i18n="saveAs" data-i18n-title="saveAs.title" disabled>別名保存…</button>
+    <button id="btn-export" data-i18n="export" data-i18n-title="export.title" disabled>WAV 書き出し…</button>
+  </div>
+  <div class="group grow">
+    <span id="file-name" class="file-name" data-i18n="noFile">ファイル未選択</span>
+  </div>
+  <div class="group">
+    <span id="status" class="status"></span>
+    <select id="lang-select" class="lang-select" data-i18n-title="lang.label"></select>
+    <span id="version" class="version"></span>
+  </div>
+</header>
+
+<div class="bar transport">
+  <div class="group">
+    <button id="btn-play" class="big" data-i18n-title="play.title" disabled>▶</button>
+    <button id="btn-loop" data-i18n="loop" data-i18n-title="loop.title" disabled>⟲</button>
+    <div class="ab" data-i18n-title="ab.title">
+      <button id="btn-a" data-mode="A" data-i18n="modeA" disabled>A</button>
+      <button id="btn-b" data-mode="B" data-i18n="modeB" class="on" disabled>B</button>
+    </div>
+    <span id="time" class="time">0:00.000</span>
+  </div>
+  <div class="group">
+    <label class="slider-label" data-i18n-title="cryAmount.title"><span data-i18n="cryAmount">泣き度</span>
+      <input id="global-amount" type="range" min="0" max="100" step="1" value="60" disabled>
+      <output id="global-amount-val">60</output>
+    </label>
+    <label class="slider-label"><span data-i18n="zoom">拡大</span>
+      <input id="zoom" type="range" min="0" max="100" step="1" value="0" disabled>
+    </label>
+    <span id="render-status" class="render-status"></span>
+  </div>
+</div>
+
+<main>
+  <section class="timeline" id="timeline">
+    <div class="labels" id="labels">
+      <div class="label main-label"><canvas id="note-axis"></canvas></div>
+    </div>
+    <div class="tracks" id="tracks">
+      <div class="track main-track" id="main-track">
+        <div id="wave"></div>
+        <canvas id="overlay" class="overlay"></canvas>
+      </div>
+      <div id="playhead" class="playhead"></div>
+    </div>
+    <div class="labels-pad"></div>
+    <div class="scroller" id="scroller"><div id="scroller-inner"></div></div>
+  </section>
+
+  <aside class="panel" id="panel">
+    <div id="panel-empty" class="panel-empty">
+      <p data-i18n="help.drag"></p>
+      <p data-i18n="help.click"></p>
+      <ul class="keys">
+        <li><kbd>Space</kbd> <span data-i18n="key.space"></span></li>
+        <li><kbd>B</kbd> <span data-i18n="key.b"></span></li>
+        <li><kbd>L</kbd> <span data-i18n="key.l"></span></li>
+        <li><kbd>Delete</kbd> <span data-i18n="key.delete"></span></li>
+        <li><kbd>Ctrl</kbd><span data-i18n="key.zoom"></span></li>
+        <li><kbd>Shift</kbd><span data-i18n="key.scroll"></span></li>
+        <li><span data-i18n="key.click"></span></li>
+      </ul>
+    </div>
+    <div id="panel-region" class="panel-region" hidden></div>
+    <div id="messages" class="messages"></div>
+  </aside>
+</main>
+
+<div id="overlay-busy" class="busy" hidden>
+  <div class="busy-box">
+    <div id="busy-text"></div>
+    <div class="progress"><div id="busy-bar"></div></div>
+  </div>
+</div>
+
+<div id="modal" class="busy" hidden>
+  <div class="busy-box modal-box">
+    <div id="modal-text"></div>
+    <div id="modal-buttons" class="actions modal-actions"></div>
+  </div>
+</div>
+
+<script type="module" src="/static/app.js"></script>
+</body>
+</html>
