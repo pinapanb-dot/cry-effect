@@ -1,5 +1,7 @@
 # Cry Effect(泣き声化ツール)
 
+**日本語** | [English](README.en.md)
+
 ボーカル WAV の指定区間に「泣きの身振り」(不規則な震え・語尾の崩れ・息・暗い響き など)を付加します。
 出力は Suno の「カバー」入力向け。音程補正と全体のフォルマントは Melodyne で行い、このツールは
 Melodyne でできない「新しい揺れや息の付加」を担当します。
@@ -13,9 +15,6 @@ Melodyne でできない「新しい揺れや息の付加」を担当します�
   「詳細情報」→「実行」で起動できます。
 - 使い方は zip に入っている `README_ja.txt`(English: `README_en.txt`)を見てください。
 - 画面は日本語 / English を切り替えられます。
-
-*English: download the zip from [Releases](../../releases/latest), extract it and run `CryEffect.exe`.
-The UI can be switched to English (top-right menu).*
 
 ## ライセンス
 
